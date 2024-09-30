@@ -251,7 +251,7 @@ class EXPORTER_PT_Panel(bpy.types.Panel):
 
 def import_gcode(context, filepath):
         scene = context.scene
-        exporter = scene.exporter
+        exporter = scene.gcode_export
         
         import time
         then = time.time()
@@ -304,7 +304,7 @@ def export_gcode(context):
 
 
     scene = context.scene
-    exporter = scene.exporter
+    exporter = scene.gcode_export
     then=time.time()
     filename = bpy.path.basename(bpy.data.filepath)
     filename = os.path.splitext(filename)[0] #strip .blend extension
@@ -477,7 +477,7 @@ def register():
     bpy.utils.register_class(gcode_settings)
     bpy.utils.register_class(WM_OT_gcode_import)
     bpy.utils.register_class(WM_OT_gcode_export)
-    bpy.types.Scene.exporter = bpy.props.PointerProperty(type= gcode_settings)
+    bpy.types.Scene.gcode_export = bpy.props.PointerProperty(type= gcode_settings)
  
 
 
