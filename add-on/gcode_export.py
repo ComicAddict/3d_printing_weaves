@@ -164,7 +164,7 @@ class EXPORTER_PT_Panel(bpy.types.Panel):
         layout = self.layout 
 
         scn = context.scene
-        exporter = scn.exporter 
+        exporter = scn.gcode_export 
         obj = context.object
         
 
