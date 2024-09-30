@@ -385,7 +385,7 @@ def export_gcode(context):
 
 
 
-    #calcE
+        #calcE
             dist = np.linalg.norm(P2-P1)
             height=np.linalg.norm(P3-P2)
 
@@ -396,7 +396,7 @@ def export_gcode(context):
             E=E_volume/2.405281875  ##E axis in mm not mm³, 2.405 is 1mm of 1.75mm filament (r*(PI*r), 0.875*PI*0.875
 
 
-    #calcF
+        #calcF
 
             speed_weight =  remap(speed_weights[e_edges[i]], exporter.min_speed, exporter.max_speed)
             F = extrusion_speed*speed_weight 
